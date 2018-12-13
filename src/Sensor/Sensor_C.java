@@ -21,20 +21,17 @@ public class Sensor_C extends Sensor implements Detectable{
     } 
 
     @Override
-    public void decodeParticle() {
-
-}
-
-    @Override
     public void detectParticle(Particle[] pSpace) {
         super.detectParticle(pSpace); 
     }
-    
+
+    @Override
+    public void decodeParticle() {
+        
+    }
 
     @Override
     public void sendDataToFushionNode(DataFusion df) {
-
-    }
-
-    
+        
+    }    
 }
