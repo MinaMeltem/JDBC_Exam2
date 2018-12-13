@@ -21,13 +21,13 @@ import java.util.ArrayList;
  */
 public abstract class Sensor implements Detectable{
        
-    protected String sensorID;
-    protected String sensorType;
-    protected String sensorStatus;    
-    protected Location location;
-    boolean transmittingAuthority;
+    private String sensorID;
+    private String sensorType;
+    private String sensorStatus;    
+    private Location location;
+    private boolean transmittingAuthority = true;
     ArrayList<Integer>decodedParticles;
-    ArrayList<Particle> detectedParticles;    
+    ArrayList<Particle> detectedParticles; 
     
     //Class Methods
     public  void displayDetectedParticles(){
@@ -56,16 +56,13 @@ public abstract class Sensor implements Detectable{
     }
     
     
-    //Consturtion -Getter -Stters
-
-    public Sensor(String sensorID, String sensorType, String sensorStatus, Location location, boolean transmittingAuthority, ArrayList<Integer> decodedParticles, ArrayList<Particle> detectedParticles) {
+    //Consturtion -Getter -Setters
+    public Sensor(String sensorID, String sensorType, String sensorStatus, Location location) {
         this.sensorID = sensorID;
         this.sensorType = sensorType;
         this.sensorStatus = sensorStatus;
         this.location = location;
-        this.transmittingAuthority = transmittingAuthority;
-        this.decodedParticles = decodedParticles;
-        this.detectedParticles = detectedParticles;
+       
     }
 
     public String getSensorID() {
@@ -94,8 +91,7 @@ public abstract class Sensor implements Detectable{
 
     public ArrayList<Particle> getDetectedParticles() {
         return detectedParticles;
-    }
-    
+    } 
     
     
 }

@@ -6,6 +6,7 @@
 package Sensor;
 
 import Environment.Particle;
+import Fusion.DataFusion;
 import GeoLocation.Location;
 import Globals.Detectable;
 import java.util.ArrayList;
@@ -15,20 +16,25 @@ import java.util.ArrayList;
  * @author MEL
  */
 public class Sensor_C extends Sensor implements Detectable{
-    public Sensor_C(String sensorID, String sensorType, String sensorStatus, Location location, boolean transmittingAuthority, ArrayList<Integer> decodedParticles, ArrayList<Particle> detectedParticles) {
-        super(sensorID, sensorType, sensorStatus, location, transmittingAuthority, decodedParticles, detectedParticles);
-    }
-    
-    
+    public Sensor_C(String sensorID, String sensorType, String sensorStatus, Location location) {
+        super(sensorID, sensorType, sensorStatus, location);
+    } 
+
     @Override
-    public void detectParticle(Particle[]pSpace){
-        
-    }
-    
+    public void decodeParticle() {
+
+}
+
     @Override
-    public void decodePartcile(){
-        
+    public void detectParticle(Particle[] pSpace) {
+        super.detectParticle(pSpace); 
     }
     
+
+    @Override
+    public void sendDataToFushionNode(DataFusion df) {
+
+    }
+
     
 }

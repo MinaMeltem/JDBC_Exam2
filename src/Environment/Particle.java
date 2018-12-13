@@ -18,9 +18,9 @@ import GeoLocation.Location;
  * TPA-11       AAXA
  */
 public class Particle {
-    protected String particalID;
-    protected String particalCode;
-    protected Location loc;
+    private String particalID;
+    private String particalCode;
+    private Location loc;
 
     public Particle(String particalID, String particalCode, Location loc) {
         this.particalID = particalID;

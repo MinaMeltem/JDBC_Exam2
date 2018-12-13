@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Factory;
-
-
 import GeoLocation.Location;
 import Sensor.Sensor;
 import java.sql.Connection;
@@ -48,25 +46,28 @@ public class SensorFactory {
             sID = rs.getString("SID");
             sType = rs.getString("SType");
             sStatus = rs.getString("Status");
-            location = new Location (rs.getInt("XCoord"), rs.getInt("YCoord"), rs.getInt("ZCoord"));
-            
-            //sensors = new Sensor(sID,sType, sStatus){};
+            location = new Location (rs.getInt("XCoord"), rs.getInt("YCoord"), rs.getInt("ZCoord"));            
+            sensors = new Sensor(sID,sType, sStatus,location) {};
             sensorList.add(sensors);
         }
         
-        return sensorList;
+        return sensorList;    
     
-    
-    } 
-     
-     //Test Purpose
-     public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    }     
+   
+     public static void displaySensors() throws SQLException, ClassNotFoundException {
         ArrayList<Sensor> sl = new ArrayList<>();
         sl = createSensor();
         for (int i=0; i < sl.size(); i++){
-            System.out.println(sl.get(i).getSensorID()+ " "+sl.get(i).getSensorType()+" " +sl.get(i).getSensorStatus() );
-        }
+            System.out.println(
+                    sl.get(i).getSensorID()+ " "+
+                    sl.get(i).getSensorType()+" " +
+                    sl.get(i).getSensorStatus()+" "+
+                    sl.get(i).getLocation().getX()+" "+
+                    sl.get(i).getLocation().getY()+ " "+
+                    sl.get(i).getLocation().getZ());
+        }         
          
-    }
+    }    
     
 }

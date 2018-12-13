@@ -11,12 +11,17 @@ import static java.lang.Math.sqrt;
 /**
  *
  * @author MEL
+ * 
+ * Returns the 3D Euclidean distance between the  Location object and 
+ * another Location object
  */
 public class Location {
     
-    protected int X;
-    protected int Y;
-    protected int Z;
+    private int X;
+    private int Y;
+    private int Z;
+    
+
 
     public Location(int X, int Y, int Z) {
         this.X = X;
@@ -46,12 +51,16 @@ public class Location {
 
     public void setZ(int Z) {
         this.Z = Z;
-    }    
+    }  
     
     
-    public static double euclidean3D(Location L1, Location L2){
-       double d = sqrt(pow((L2.X - L1.X),2) + pow((L2.Y - L1.Y),2) + pow((L2.Z - L1.Z),2));
-       return d;
+    public double euclidean (Location L){
+        return sqrt(pow((this.getX() - L.getX()),2) + pow((this.Y - L.getY()),2) + pow((this.getZ() - L.getZ()),2));
     }
-       
+     
+    public static double euclidean3D(Location L1, Location L2){
+        return L2.euclidean(L1);
+    }
+    
+    
 }

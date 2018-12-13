@@ -5,10 +5,17 @@
  */
 package Globals;
 
+import Environment.Particle;
+import Fusion.DataFusion;
+
 /**
  *
  * @author MEL
  */
 public interface Detectable {
+    
+    public void detectParticle(Particle[]p);
+    public void decodeParticle();    
+    public void sendDataToFushionNode(DataFusion df);
     
 }
