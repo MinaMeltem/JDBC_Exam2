@@ -9,7 +9,8 @@ package Globals;
  *
  * @author MEL
  */
-public enum SensorTypes {
+public enum SensorTypes implements SensorRanges{
    SENSOR_A, SENSOR_B, SENSOR_C
+   
     
 }

@@ -9,6 +9,7 @@ import Environment.Particle;
 import Fusion.DataFusion;
 import GeoLocation.Location;
 import Globals.Detectable;
+import Globals.SensorRanges;
 import java.util.ArrayList;
 
 /**
@@ -23,8 +24,17 @@ public class Sensor_A extends Sensor implements Detectable{
 
     @Override
     public void detectParticle(Particle[] pSpace) {
-        super.detectParticle(pSpace); 
-    }    
+        super.detectParticle(pSpace);
+        
+        for (Particle pObj : pSpace) {
+            double d = this.getLocation().euclidean(pObj.getLoc());
+            if (d <SensorRanges.Sensor_A) {
+                if (pObj.getParticalCode().charAt(0) == 'A') {
+                    this.detectedParticles.add(pObj);
+                }
+            }             
+        }
+    }
 
     @Override
     public void decodeParticle() {

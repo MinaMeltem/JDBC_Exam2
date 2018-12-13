@@ -11,6 +11,8 @@ package Globals;
  */
 public interface SensorRanges {
     
-    //constant range of sensor A, sensor B and sensor C
+    static final int Sensor_A = 55;
+    static final int Sensor_B = 65;
+    static final int Sensor_C = 100;
     
 }

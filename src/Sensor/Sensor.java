@@ -14,9 +14,10 @@ import java.util.ArrayList;
 /**
  *
  * @author MEL
- * * SID      SType     Status 
- *------    ------    ------
- * SenA-0   Sensor_A  Online |
+ * sensor JOIN sensor_location table
+ * * SID      SType     Status   XCoord     YCoord      XCoord
+ *------    ------    ------    --------    -------     -------
+ * SenA-0   Sensor_A  Online        315         45          68
  * 
  */
 public abstract class Sensor implements Detectable{

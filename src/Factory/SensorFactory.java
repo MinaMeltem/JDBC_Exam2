@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Factory;
+import Fusion.DataFusion;
 import GeoLocation.Location;
 import Sensor.Sensor;
 import java.sql.Connection;
@@ -47,7 +48,19 @@ public class SensorFactory {
             sType = rs.getString("SType");
             sStatus = rs.getString("Status");
             location = new Location (rs.getInt("XCoord"), rs.getInt("YCoord"), rs.getInt("ZCoord"));            
-            sensors = new Sensor(sID,sType, sStatus,location) {};
+            sensors = new Sensor(sID,sType, sStatus,location) {
+
+                //Interface methods automatically implemented
+                @Override
+                public void decodeParticle() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public void sendDataToFushionNode(DataFusion df) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
             sensorList.add(sensors);
         }
         
