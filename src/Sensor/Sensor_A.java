@@ -38,11 +38,26 @@ public class Sensor_A extends Sensor implements Detectable{
 
     @Override
     public void decodeParticle() {
-        
+        for (int i=0; i<this.detectedParticles.size(); i++){
+            switch (this.detectedParticles.get(i).toString()) {
+                case "AAAA":
+                    this.decodedParticles.add(1);
+                    break;
+                case "AAAX":
+                    this.decodedParticles.add(2);
+                    break;
+                case "AAXA":
+                    this.decodedParticles.add(3);
+                    break;
+                default:
+                    this.decodedParticles.add(4);
+                    break;
+            }
+        }        
     }
 
     @Override
-    public void sendDataToFushionNode(DataFusion df) {
+    public void sendDataToFushionNode(DataFusion df) {        
        
     }
 

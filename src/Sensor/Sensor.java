@@ -45,6 +45,9 @@ public abstract class Sensor implements Detectable{
     }
   
     public void sendDataToFusionNode(DataFusion df){
+//        if(this.transmittingAuthority == true){
+//            this.decodedParticles
+ //       }
         
     }
     
